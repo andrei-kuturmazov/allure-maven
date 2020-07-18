@@ -11,7 +11,6 @@ import org.junit.runner.RunWith;
         plugin = {"io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm"},
         features = {"./src/test/resources/features/buyItems.feature"},
         glue = {"steps"}
-        //snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class CucumberTest extends TestInit {
 

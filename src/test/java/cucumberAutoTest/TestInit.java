@@ -3,16 +3,20 @@ package cucumberAutoTest;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.junit.ScreenShooter;
+import com.google.common.io.Files;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import io.qameta.allure.Attachment;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Rule;
+
+import java.io.IOException;
 
 
 public class TestInit {
 
-    @Rule
-    public ScreenShooter makeScreenshotOnFailure = ScreenShooter.failedTests();
+    //@Rule
+    //public ScreenShooter makeScreenshotOnFailure = ScreenShooter.failedTests();
 
     @BeforeClass
     public static void before() {
@@ -23,6 +27,18 @@ public class TestInit {
             Configuration.browserCapabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities.setCapability("videoFrameRate", 24);
         }
+    }
+
+    @After
+    public void afterScenario(Scenario scenario) throws IOException {
+        if (scenario.isFailed()) {
+            takeScreenshotOnFailure();
+        }
+    }
+
+    @Attachment(type = "image/png")
+    private byte[] takeScreenshotOnFailure() throws IOException {
+        return Files.toByteArray(Screenshots.takeScreenShotAsFile());
     }
 
     @AfterClass
