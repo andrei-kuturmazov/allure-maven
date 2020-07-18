@@ -15,7 +15,7 @@ public class MainPage {
     List<String> productsToBuyNames;
 
     private final String womenTabItem = "Blouse";
-    private final String dressesTabItem = "rinted Chiffon Dress";
+    private final String dressesTabItem = "Printed Chiffon Dress";
     private final String shirtsTabItem = "Faded Short Sleeve T-shirts";
     private SelenideElement womenTabLink = $x("//div[@id='block_top_menu']/ul/li/a[contains(text(),'Women')]");
     private SelenideElement dressesTabLink = $x("//div[@id='block_top_menu']/ul/li/a[contains(text(),'Dresses')]");
