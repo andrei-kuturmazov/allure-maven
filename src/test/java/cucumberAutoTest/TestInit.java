@@ -21,6 +21,7 @@ public class TestInit {
     @BeforeClass
     public static void before() {
         Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.browser = "firefox";
         Configuration.browserSize = "1920x1080";
         Configuration.browserCapabilities.setCapability("enableVNC", true);
         if ("true".equals(System.getProperty("video.enabled"))) {
