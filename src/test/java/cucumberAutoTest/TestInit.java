@@ -4,8 +4,9 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.Selenide;
 import com.google.common.io.Files;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.qameta.allure.Attachment;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
