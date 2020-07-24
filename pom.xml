@@ -45,7 +45,7 @@
                     <testClassesDirectory>target/test-classes</testClassesDirectory>
                     <testSourceDirectory>target/test-classes/java</testSourceDirectory>
                     <includes>
-                        <include>*Runner.class</include>
+                        <include>*Test.class</include>
                     </includes>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
