@@ -19,13 +19,6 @@
     </properties>
 
     <build>
-        <testResources>
-            <testResource>
-                <directory>src/test/resources</directory>
-                <filtering>true</filtering>
-            </testResource>
-        </testResources>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -34,7 +27,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -42,17 +34,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
                 <configuration>
-                    <testClassesDirectory>target/test-classes</testClassesDirectory>
-                    <testSourceDirectory>target/test-classes/java</testSourceDirectory>
                     <includes>
                         <include>*Test.class</include>
                     </includes>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <systemPropertyVariables>
-                        <video.enabled>${video.enabled}</video.enabled>
-                    </systemPropertyVariables>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -78,12 +65,6 @@
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <version>5.13.0</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>commons-logging</artifactId>
-                    <groupId>commons-logging</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -95,11 +76,10 @@
             <artifactId>allure-cucumber5-jvm</artifactId>
             <version>${allure.version}</version>
         </dependency>
-
         <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-selenide</artifactId>
-            <version>${allure.version}</version>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>${cucumber.core.version}</version>
         </dependency>
 
         <dependency>
