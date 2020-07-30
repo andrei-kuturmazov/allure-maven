@@ -14,7 +14,7 @@ public class MainPage {
     public String baseUrl = "http://automationpractice.com/index.php";
     List<String> productsToBuyNames;
 
-    private final String womenTabItem = "louse";
+    private final String womenTabItem = "Blouse";
     private final String dressesTabItem = "Printed Chiffon Dress";
     private final String shirtsTabItem = "Faded Short Sleeve T-shirts";
     private SelenideElement womenTabLink = $x("//div[@id='block_top_menu']/ul/li/a[contains(text(),'Women')]");
