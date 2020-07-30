@@ -6,7 +6,6 @@ import com.codeborne.selenide.Selenide;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
-
 public class TestInit {
 
     @BeforeClass
